@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
+  get 'herbs/graph_one'
+
+  get 'herbs/graph_two'
+
   get 'rooms/show'
 
-  get 'static_pages/home'
+  # get 'static_pages/home'
+  root controller: :static_pages, action: :home
 
   get 'static_pages/index'
 
   get 'static_pages/help'
 
   # get 'euro_happy/index'
-  root controller: :euro_happy, action: :index
+  # root controller: :euro_happy, action: :index
 
 	mount ActionCable.server => '/cable'
 

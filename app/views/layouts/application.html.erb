@@ -12,15 +12,19 @@
   </head>
 
 	<nav class="navbar navbar-default navbar-expand-sm">
-		<%= link_to 'Root', root_path, method: :get %>
-		<%= link_to 'Home', static_pages_home_path, method: :get %>
+		<%= link_to 'Home', root_path, method: :get %>
 		<%= link_to 'Index', static_pages_index_path, method: :get %>
 		<%= link_to 'Help', static_pages_help_path, method: :get %>
 		<%= link_to 'Rooms#Show', rooms_show_path, method: :get %>
+		<%= link_to 'Graph One', herbs_graph_one_path, method: :get %>
+		<%= link_to 'Graph Two', herbs_graph_two_path, method: :get %>
 	</nav>
 
   <body>
-		<h1>Chat room</h1>
+    <%= yield %>
+
+	<div class="container" style="position: fixed; bottom: 0; right: 0;">
+		<h1>Chat room&nbsp;&nbsp;</h1>
 
 		<div id="messages">
 
@@ -30,7 +34,8 @@
 			<label>Say something:</label><br>
 			<input type="text" data-behavior="room_speaker">
 		</form>
+		<br>&nbsp;<br>
+	</div>
 
-    <%= yield %>
   </body>
 </html>
