@@ -1,0 +1,2 @@
+module EuroHappyHelper
+end
